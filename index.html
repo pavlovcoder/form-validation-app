@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Main Page</title>
+        <!-- Embed CSS-file for Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">
+        <link rel="stylesheet" href="lib/index.css">
+    </head>
+    <body>
+        <div class="fluid-container">
+            <div class="container">
+                <form name="firstFormVal" action="" onsubmit="return validateForm()">
+                    <h4>First form validation</h4>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="First name" name="fname">
+                        </div>
+                        <div class="col">
+                            <input type="text" class="form-control" placeholder="Last name" name="sname">
+                        </div>
+                        <div class="col">
+                            <input type="submit" value="Submit" class="btn btn-primary">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="container">
+                <form name="secondFormVal" action="">
+                    <h4>Validate numeric input</h4>
+                    <div class="form-row">
+                        <div class="col">
+                            <input type="number" id="inNumber" class="form-control" aria-describedby="inputHelpBlock" placeholder="347...956">
+                            <small id="inputHelpBlock" class="form-text text-muted">
+                                You must input any number, which range will be between 347 and 956.
+                            </small>
+                        </div>
+                        <div class="col">
+                            <button type="button" class="btn btn-primary" onclick="numberValidate()">Check Out</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="replaceId"></div>
+            </div>
+            <div class="container">
+                <form class="form-inline">
+                    <h4>Password Validation</h4>
+                    <div class="form-group">
+                        <input type="password" id="inPass" class="form-control" aria-describedby="passHelp" placeholder="Password" required>
+                        <small id="passHelp" class="text-muted">Must be 8-12 characters long.</small>
+                        <input type="submit" value="Submit" class="btn btn-primary">
+                    </div>
+                </form>
+            </div>
+            <div class="container">
+                <form autocomplete="on" id="form3" action="Forms/result.php" method="get">
+                    <h4>HTML Validation Atributes</h4>
+                    <div class="form-group-row">
+                        <label for="firstName" class="col-sm-2 col-form-label">First</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="firstName" placeholder="Edwin" aria-describedby="fNameHelp" readonly>
+                            <small id="fNameHelp" class="form-text text-muted">Readonly attribute</small>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="secondName" class="col-sm-2 col-form-label">Second</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="secondName" placeholder="McFerdinand" disabled aria-describedby="secHelp" novalidate>
+                            <small id="secHelp" class="form-text text-muted">Disabled field</small>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="email" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                            <input type="email" class="form-control" id="email-input" placeholder="example@email.com" aria-describedby="emailHelp" size="30" autocomplete="off" maxlength="30">
+                            <small id="emailHelp" class="form-text text-muted">Provide your own email, which should be not greater than 20 symbols.</small>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="telephone" class="col-sm-4 col-form-label">Mobile number</label>
+                        <div class="col-sm-10">
+                            <input type="tel" class="form-control" id="tel-input" placeholder="(+48)XXX-XXX-XXX" aria-describedby="telHelp" maxlength="12">
+                            <small id="telHelp" class="form-text text-muted">Provide your polish mobile number.</small>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="col-sm-10">
+                            <input type="submit" class="btn btn-primary" value="Submit" id="btn-submit">
+                            <input type="submit" class="btn btn-warning" value="Submit as admin" id="btn-submit2" formaction="Forms/result2.php" formenctype="multipart/form-data" formmethod="post">
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <div class="col-sm-10">
+                            <input type="submit" class="btn btn-primary" value="Submit as default" id="btn-submit3">
+                            <input type="submit" class="btn btn-primary" value="Submit in a new window" id="btn-submit4" formtarget="_blank">
+                        </div>
+                    </div>
+                </form>
+                <div class="form-group-row">
+                    <label for="datePick" class="col-sm-4 col-form-label">Pick the date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" id="datePick" aria-describedby="dateHelp" form="form3">
+                        <small id="dateHelp" class="form-text text-muted">Provide your date.</small>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <input type="image" src="lib/images/like.png" alt="Submit" height="50" width="50" id="image-input" form="form3">
+                </div>
+                <div class="form-group-row">
+                    <label for="dataSelect" class="col-sm-6 col-form-label">Pick the best video-game</label>
+                    <div class="col-sm-10">
+                        <input list="videoGameList" class="form-control" aria-describedby="gameHelp" form="form3">
+                        <small id="gameHelp" class="form-text text-muted">Pick own the most favorite video game.</small>
+                        <datalist id="videoGameList">
+                            <option value="The Resident Evil"></option>
+                            <option value="Outlast"></option>
+                            <option value="The Evil Within"></option>
+                            <option value="Silent Hill"></option>
+                            <option value="The Last of Us"></option>
+                            <option value="Heavy Rain"></option>
+                            <option value="Beyond: Two Souls"></option>
+                            <option value="Until Dawn"></option>
+                            <option value="Metro"></option>
+                        </datalist>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <label for="dateSelect" class="col-sm-6 col-form-label">Pick correct date</label>
+                    <div class="col-sm-10">
+                        <input type="date" class="form-control" aria-describedby="dateSelHelp" form="form3" min="2010-11-05" max="2017-12-31">
+                        <small id="dateSelHelp" class="form-text text-muted">Pick correct date between 05/11/2010 and 12/31/2017</small>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="col-sm-10">
+                        <label class="custom-file">
+                            <input type="file" id="file2" class="custom-file-input" multiple>
+                            <span class="custom-file-control"></span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <form id="form4">
+                    <h4>New Validation Forms</h4>
+                    <div class="form-group-row">
+                        <label for="persId" class="col-sm-6 col-form-label">Provide your personal ID</label>
+                        <div class="col-sm-10">
+                            <input type="text" name="pesonalID" pattern="[A-F]{2}[G-Z]{3}[0-9]{5}" data-toggle="tooltip" data-placement="top" title="Provide first two symbols from A to F letters, three symbols from G to Z letters and five symbols from 0 to 9 numbers." placeholder="ADFJW46983" class="form-control" id="persId">
+                            <input type="submit" class="btn btn-primary btn-block" value="Submit" id="subBtn">
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="rangeSel" class="col-sm-6 col-form-label">Provide your range</label>
+                        <div class="col-sm-10">
+                            <input type="range" name="rangeSelect" data-toggle="tooltip" data-placement="top" title="Please, select your range." step="0.0025" min="0.000025" max="1" class="form-control" onchange="rangeOut(this.value)" value="0">
+                            <div class="input-group">
+                                <div class="input-group-addon">Output:</div>
+                                <input type="number" class="form-control" id="outResultWin" value="0" name="outResult" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="container">
+                <h4>Forms API</h4>
+                <div class="form-group-row">
+                    <label for="checkVal1" class="col-sm-6 col-form-label">Enter number</label>
+                    <div class="col-sm-10">
+                        <input type="number" id="checkVal1" data-toggle="tooltip" data-placement="top" title="Please, enter number in range between 2345 and 14562" min="2345" max="14562" class="form-control">
+                        <button type="button" class="btn btn-primary btn-block" onclick="checkValAPI()" id="subBtn">Submit</button>
+                    </div>
+                </div>
+                <div id="replaceId2"></div>
+                <form id="form5" name="formIn">
+                    <h4 id="headForm">Testing Validity Properties <a tabindex="0" class="btn bnt-primary-outline btn-small" role="button" data-toggle="popover" data-trigger="hover" title="How can I fill out the form ?"  data-placement="left" data-content="1) Read all small description below every input fields in the form. 2) Try to follow the rules, which is writed below these descriptions. 3) After that, click the button 'Submit', for checking out validation. 4) Finally, check all results!" id="info-icon"><i class="material-icons md-24">info</i></a></h4>
+                    <div class="form-group-row">
+                        <label for="checkAPI1" class="col-sm-6 col-form-label">Enter your ITIN (USA)<a class="btn btn-primary-outline btn-small" role="button" data-toggle="tooltip" data-placement="right" title="'ITIN' - An Individual Taxpayer Identification Number (ITIN) is a United States tax processing number issued by the Internal Revenue Service (IRS)."><i class="material-icons md-18">help</i></a></label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="checkAPI1" maxlength="9" pattern="[9]{1}[0-9]{2}[7-9]{1}[0-9]{5}" placeholder="9XX-78-XXXX" aria-describedby="API1Help" required>
+                            <small id="API1Help" class="form-text text-muted">Enter nine-digit number that begins with the number 9, and the 4th and 5th digits, also known as second section (xxx-xx-xxxx), range from 70 to 88, 90 to 92 and 94 to 99.</small>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="checkAPI2" class="col-sm-6 col-form-label">Enter your delay time</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="checkAPI2" max="90" min="30" maxlength="2" placeholder="XX" aria-describedby="API2Help" required>
+                            <small id="API2Help" class="form-text text-muted">Enter your delay time period from the moment to get a new ITIN in public administration.</small>
+                        </div>
+                    </div>
+                    <div class="form-group-row">
+                        <label for="checkAPI3" class="col-sm-8 col-form-label">Enter your USA passport number</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="checkAPI3" maxlength="9" aria-describedby="API3Help" placeholder="XXXXXXXXX" required>
+                            <small id="API3Help" class="form-text text-muted">Your american passport number is consist of 9 digits and located at the right-top corner.</small>
+                            <button type="button" class="btn btn-primary btn-block" id="subBtn" onclick="apiValidation()">Submit</button>
+                        </div>
+                    </div>
+                </form>
+                <div id="replaceId3"></div>
+            </div>
+            <div class="container">
+                <h4>Regular Expression Testing</h4>
+                <div class="form-group-row">
+                    <label for="regExp1" class="col-sm-8 col-form-label">Enter any word from Manifesto: <a class="btn btn-primary-outline btn-small" role="button" data-toggle="tooltip" data-placement="right" title="Enter any desire word from Manifesto for further indentify that position-number."><i class="material-icons md-18">help</i></a></label>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="alert alert-primary" id="manifesto">The Communist Manifesto is divided into a preamble and four sections, the last of these a short conclusion. The introduction begins by proclaiming "A spectre is haunting Europe—the spectre of communism. All the powers of old Europe have entered into a holy alliance to exorcise this spectre".</div>
+                            <div class="input-group" id="regExp1">
+                                <input type="text" class="form-control" placeholder="Enter searching word" aria-label="Enter searching word" id="searchedWord" required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button" onclick="sPattern()">Search</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="input-group" id="outBlock">
+                                <div class="input-group-addon">Output:</div>
+                                <input type="text" class="form-control" id="outResultWin2" name="outResult2" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="row">
+                        <div class="col-lg-10">
+                                <div class="alert alert-primary" id="outBlock2">
+                                    <blockquote class="blockquote">
+                                    <p class="mb-0" id="quote">Communism is for us not a state of affairs which is to be established, an ideal to which reality will have to adjust itself. <span id="repEl">We call communism the real movement which abolishes the present state of things.</span> The conditions of this movement result from the premises now in existence.</p>
+                                    <footer class="blockquote-footer">written by Karl Marx in <cite title="The German Ideology">"The German Ideology" manuscript.</cite></footer>
+                                </blockquote>
+                            </div>
+                            <label for="regExp2" class="col-sm-8 col-form-label">Enter sentence for replace another: <a class="btn btn-primary-outline btn-small" role="button" data-toggle="tooltip" data-placement="right" title="Enter any own sentence for replace another default sentence in quote."><i class="material-icons md-18">help</i></a></label>
+                            <div class="input-group" id="regExp2">
+                                <input type="text" class="form-control" placeholder="Enter sentence for replace" aria-label="Enter sentence for replace" id="replaceSentence" required>
+                                <span class="input-group-btn">
+                                    <button class="btn btn-primary" type="button" onclick="rPattern()">Replace</button>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="input-group" id="outBlock2">
+                                <div class="input-group-addon">Output:</div>
+                                <input type="text" class="form-control" id="outResultWin3" name="outResult3" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-row">
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="form-group">
+                                <label for="regExp3" class="col-sm-8 col-form-label">Enter any own text: <a class="btn btn-primary-outline btn-small" role="button" data-toggle="tooltip" data-placement="right" title="Enter any desire text in the textarea for further searching matching element (revolution)."><i class="material-icons md-18">help</i></a></label>
+                                <textarea class="form-control" id="regExp3" rows="4" placeholder="Any own text block..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <button class="btn btn-primary btn-block" type="button" onclick="allMatch()">Search matching (revolution)-element</button>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="input-group" id="outBlock3">
+                                <div class="input-group-addon">Output:</div>
+                                <input type="text" class="form-control" id="outResultWin4" name="outResult4" readonly>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group-row" id="bottom-window">
+                    <h4 id="mod-head">Modifier Application <a tabindex="0" class="btn btn-primary-outline btn-small" role="button" data-toggle="popover" data-trigger="hover" title="What is this ?" data-content="Modifier Application - it's a special application for checking all neccessary properties and methods in regular expression objects in JavaScript." data-placement="left" id="info-icon"><i class="material-icons md-24">info</i></a></h4>
+                    <div class="row">
+                        <div class="col-lg-10">
+                            <div class="form-group">
+                                <label for="inText" class="col-sm-7 col-form-label">Enter any own text <a class="btn btn-primary-outline btn-small" role="button" data-toggle="tooltip" data-placement="right" title="Enter any own desire text, which will include searching-word: 'country'."><i class="material-icons md-18">help</i></a></label>
+                                <textarea class="form-control" id="inText" rows="4" placeholder="Enter any own text for checking out..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-7">
+                            <div class="form-group-row">
+                                <div class="input-group">
+                                    <div class="input-group" id="outBlock5">
+                                        <div class="input-group-addon">Output:</div>
+                                        <input type="text" class="form-control" id="outResultWin5" name="outResult5" readonly>
+                                    </div>
+                                    <div class="dropdown">
+                                        <button class="btn btn-primary btn-block dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manipulation menu</button>
+                                        <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenu2">
+                                            <div class="dropdown-header">Modifiers</div>
+                                            <button type="button" class="dropdown-item" onclick="modifierApp(this.innerHTML)">Insensetive</button>
+                                            <button type="button" class="dropdown-item" onclick="modifierApp(this.innerHTML)">Global</button>
+                                            <button type="button" class="dropdown-item" onclick="modifierApp(this.innerHTML)">Multiline</button>
+                                            
+                                            <div class="dropdown-divider"></div>
+                                            <button type="button" class="dropdown-item" onclick="modifierApp(this.innerHTML)">Integral</button>
+                                            <div class="dropdown-divider"></div>
+                                            <div class="dropdown-header">Position</div>
+                                            <button type="button" class="dropdown-item" onclick="modifierApp(this.innerHTML)">Beginning line</button>
+                                            <button type="button" class="dropdown-item" onclick="modifierApp(this.innerHTML)">End line</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-lg-10">
+                        <a class="btn btn-primary btn-block" role="button" href="index2.html" id="next-nav">Next ⟶</a> 
+                    </div>
+                </div>
+            </div>
+        <!-- Embed JS-files for Bootstrap -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+        <!-- My own JS-file: -->
+        <script src="lib/index.js"></script>
+    </body>
+</html>

@@ -1,0 +1,131 @@
+.container {
+  margin-top: 20px;
+  padding: 20px;
+  border: 1px solid #cccccc;
+  border-radius: 7px; }
+
+input[type=submit] {
+  cursor: pointer; }
+
+button[type=button] {
+  cursor: pointer; }
+
+#inPass, #passHelp {
+  margin-right: 10px; }
+
+#btn-submit, #btn-submit2, #btn-submit3, #btn-submit4 {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  width: 49.4%; }
+
+#btn-submit3, #btn-submit4 {
+  margin-top: 0px; }
+
+#image-input {
+  margin-left: 20px;
+  margin-top: 20px; }
+
+#file2 {
+  margin-top: 20px; }
+
+#subBtn {
+  margin-top: 20px; }
+
+#info-icon {
+  float: right;
+  right: 5px;
+  cursor: pointer; }
+
+.material-icons.md-24 {
+  font-size: 22px; }
+
+.material-icons.md-18 {
+  font-size: 15px; }
+
+#headForm {
+  margin-top: 20px; }
+
+#outBlock, #outBlock2, #outBlock3, #next-nav, #outBlock7, #outBlock8 {
+  margin-top: 20px; }
+
+#repEl {
+  background-color: #33ccff;
+  padding: 5px 10px;
+  border-radius: 20px; }
+
+#mod-head {
+  margin-top: 20px; }
+
+#previous, #next {
+  width: 33.5vw;
+  color: #fff;
+  cursor: pointer; }
+
+#textBlock6 {
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.form-control.form-customize {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  border-top: 0; }
+
+.btn.btn-primary.dropdown-toggle.btn-customize {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0; }
+
+.form-control.textarea-customize {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  border-top: 0; }
+
+.material-icons.md-18.done-icons {
+  margin-right: 10px;
+  color: #fff; }
+
+.dropdown-item {
+  padding-left: 10px; }
+
+.dropdown-item.drop-list-2 {
+  margin-right: 0; }
+
+.btn-group.btn-gr-row-1 {
+  margin-top: 20px;
+  text-align: center; }
+
+.btn-group.btn-gr-row-2 {
+  margin-top: 5px; }
+
+.custom-controls-stacked {
+  margin-top: 10px; }
+
+.btn-group.reg-group {
+  width: 100%;
+  margin-top: 5px; }
+
+.btn.btn-primary.reg-btn, .btn.btn-primary.reg-btn2 {
+  width: 33.5%; }
+
+.btn.btn-primary.reg-btn2 {
+  border-radius: 0; }
+
+.btn-group.reg-gr {
+  width: 100%; }
+
+#textBlock10 {
+  margin-bottom: 15px; }
+
+#textBlock11, #inputPattern {
+  border-bottom: none;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0; }
+
+#inputPattern {
+  border-radius: 0; }
+
+#textBlock12 {
+  border-top: none;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0; }
+
+/*# sourceMappingURL=index.css.map */
